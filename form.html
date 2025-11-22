@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with CSS Selectors</title>
+    <style>
+        /* Universal Selector: Targets all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Type Selector: Targets all <form> elements */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Class Selector: Targets elements with the class "input-field" */
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* ID Selector: Targets an element with the id "submit-button" */
+        #submit-button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* Pseudo-Class Selector: Targets the input field when it's focused */
+        .input-field:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Pseudo-Class Selector: Targets the button when hovered */
+        #submit-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Attribute Selector: Targets all inputs with type text */
+        input[type="text"] {
+            border: 2px solid #ccc;
+        }
+
+        /* Descendant Selector: Targets <label> inside <form> */
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Child Selector: Targets <input> elements that are direct children of <form> */
+        form > input {
+            margin-bottom: 15px;
+        }
+
+        /* Grouping Selector: Combines multiple selectors with common styling */
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* nth-child Selector: Targets the third input field */
+        form input:nth-child(3) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact Form</h1>
+
+    <form action="#" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" class="input-field" placeholder="Enter your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="input-field" placeholder="Your message" rows="4" required></textarea>
+
+        <button type="submit" id="submit-button">Submit</button>
+    </form>
+
+</body>
+</html>
